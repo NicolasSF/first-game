@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Menu/Buttons/NewGameButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu/Buttons/OptionsButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/FadeIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Buttons/ContinueButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Enemies/deep_elf_knight_old.png" type="Texture" id=5]
+[ext_resource path="res://Menu/title_screen.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Font/novem___.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[node name="TitleStreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.663452
+margin_top = -0.663422
+margin_right = 0.663452
+margin_bottom = -0.663422
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 40.0
+margin_right = 730.0
+margin_bottom = 440.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 610.0
+margin_bottom = 32.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+flip_h = true
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 610.0
+margin_bottom = 345.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 610.0
+margin_bottom = 309.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 34.0
+margin_bottom = 94.0
+
+[node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 124.0
+margin_bottom = 184.0
+scene_to_load = "res://Game.tscn"
+
+[node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
+margin_top = 214.0
+margin_bottom = 274.0
+scene_to_load = "res://Menu/Options.tscn"
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 349.0
+margin_right = 610.0
+margin_bottom = 400.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "Version 0.0.1 
+Iko-san Studios"
+
+[node name="FadeIn" parent="." instance=ExtResource( 3 )]
+[connection signal="mouse_entered" from="." to="." method="_on_TitleStreen_mouse_entered"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

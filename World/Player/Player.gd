@@ -2,30 +2,26 @@ extends Area2D
 signal hit
 
 # Declare member variables here. Examples:
-const level = 1
+const level = 58
 const health = 100
 const max_health = 100
 const regen = 1
 #la vida aumenta con cada nivel, se regenera con el tiempo
-const xp = 0
+const xp = 23
 const xp_needed = 100
 const damage = 1
-const armor = 0
+const armor = 2
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Area2D__Player_body_entered(body):
-	pass # Replace with function body.
+func _process(delta):
+	for label in $HUD/ColorRect.get_children():
+		if label.get("current_info_for"):
+			if label.current_info_for == "level":
+				label.text = String(level)	
+			elif label.current_info_for == "xp":
+				label.text = String(xp)
+			elif label.current_info_for == "armor":
+				label.text = String(armor)
 
 #func enemy_killed(int):
 #	xp = xp + (reward * monster_level)

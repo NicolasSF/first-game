@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Font/PixelFontByPix3m.tres" type="DynamicFont" id=1]
+[ext_resource path="res://World/Player/current_info.tscn" type="PackedScene" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = -0.495977
+anchor_top = -0.565254
+anchor_right = -0.495977
+anchor_bottom = -0.565254
+margin_left = 423.564
+margin_top = 674.322
+margin_right = 582.564
+margin_bottom = 751.322
+color = Color( 0, 0, 0, 0.509804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="ColorRect"]
+margin_left = 1.19688
+margin_top = 0.772369
+margin_right = 47.1969
+margin_bottom = 15.7724
+rect_scale = Vector2( 1.8, 1.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Level"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentLevelLabel" parent="ColorRect" instance=ExtResource( 2 )]
+current_info_for = "level"
+
+[node name="ExpLabel" type="Label" parent="ColorRect"]
+margin_left = 1.0
+margin_top = 27.0
+margin_right = 31.0
+margin_bottom = 42.0
+rect_scale = Vector2( 1.8, 1.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exp"
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentExpLabel2" parent="ColorRect" instance=ExtResource( 2 )]
+margin_top = 27.0
+current_info_for = "xp"
+
+[node name="ArmorLabel" type="Label" parent="ColorRect"]
+margin_left = 1.0
+margin_top = 52.0
+margin_right = 53.0
+margin_bottom = 67.0
+rect_scale = Vector2( 1.8, 1.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Armor"
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentArmorLabel2" parent="ColorRect" instance=ExtResource( 2 )]
+margin_top = 52.0
+current_info_for = "armor"

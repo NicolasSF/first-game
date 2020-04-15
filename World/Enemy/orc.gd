@@ -10,7 +10,7 @@ var bounce_countdown = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().root.get_node("Game/Player/KinematicBody2D")
+	player = get_node("res://World/Player/Player.tscn/Player/PlayerBody")
 	rng.randomize()
 	pass # Replace with function body.
 

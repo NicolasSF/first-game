@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Font/PixelFontByPix3m.tres" type="DynamicFont" id=1]
+[ext_resource path="res://World/Player/current_info.gd" type="Script" id=2]
+
+[node name="CurrentInfo" type="Label"]
+margin_left = 109.0
+margin_top = 0.772369
+margin_right = 134.0
+margin_bottom = 15.7724
+rect_scale = Vector2( 1.8, 1.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 2
+valign = 1
+uppercase = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
