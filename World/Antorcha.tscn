@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Objects/Decoration/torch_4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Objects/Decoration/torch_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Objects/Decoration/torch_3.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Objects/Decoration/torch_2.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -13,15 +15,22 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 5.1777
+height = 1.88206
+
 [node name="Antorcha" type="StaticBody2D"]
-position = Vector2( 19.5633, 19.5633 )
+position = Vector2( -0.469089, -8.75382 )
 scale = Vector2( 0.8, 0.8 )
+physics_material_override = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+position = Vector2( -0.0493741, 0.148122 )
+frames = SubResource( 2 )
+frame = 3
 playing = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 3.05136, 4.39099 )
-build_mode = 1
-polygon = PoolVector2Array( -6.63411, -18.4872, 1.46539, -18.5884, 3.29377, -8.05214, 1.87037, 8.44368, -6.12789, 8.54492, -8.09302, -7.53117 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.600477, 10.9373 )
+rotation = 1.57079
+shape = SubResource( 3 )

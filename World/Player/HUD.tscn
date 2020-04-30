@@ -10,10 +10,10 @@ anchor_left = -0.495977
 anchor_top = -0.565254
 anchor_right = -0.495977
 anchor_bottom = -0.565254
-margin_left = 423.564
-margin_top = 674.322
-margin_right = 582.564
-margin_bottom = 751.322
+margin_left = 439.564
+margin_top = 663.322
+margin_right = 598.564
+margin_bottom = 740.322
 color = Color( 0, 0, 0, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false

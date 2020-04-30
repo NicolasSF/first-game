@@ -2,18 +2,17 @@ extends Area2D
 signal hit
 
 # Declare member variables here. Examples:
-const level = 58
+export var level = 58
 const health = 100
 const max_health = 100
 const regen = 1
 #la vida aumenta con cada nivel, se regenera con el tiempo
-const xp = 23
+export var xp = 23
 const xp_needed = 100
 const damage = 1
-const armor = 2
+export var armor = 2
 
-
-func _process(delta):
+func process(_delta):	
 	for label in $HUD/ColorRect.get_children():
 		if label.get("current_info_for"):
 			if label.current_info_for == "level":
